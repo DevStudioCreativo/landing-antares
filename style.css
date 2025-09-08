@@ -1,0 +1,446 @@
+:root {
+  --beige: #f9eee4; /* New background color */
+  --rosa-suave: #E59A9A; /* Salmon-like pink */
+  --rosa-suave-rgb: 229, 154, 154; /* RGB value for --rosa-suave */
+  --verde-menta: #95b8b8;
+  --verde-oliva-oscuro: #8A9A5B;
+  --verde-oliva-oscuro-rgb: 138, 154, 91; /* RGB value for --verde-oliva-oscuro */
+  --gris-claro: #b0b0b0;
+  --texto-principal: #333333; /* Darker text */
+  --bg: var(--beige);
+  --primary: var(--rosa-suave);
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background: var(--bg);
+  color: var(--texto-principal);
+  overflow-x: hidden;
+}
+
+.section {
+  padding: 4em 2em;
+  text-align: center;
+}
+
+.section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  margin-bottom: 1em;
+  color: var(--primary);
+}
+
+.bg-light {
+  background: #fff;
+}
+
+/* Hero & Logo */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
+    font-size: 2em;
+    max-width: 12em;
+    margin: 1em 0;
+    color: white;
+}
+
+.logo-container {
+  width: 250px;
+  height: 250px; /* Fixed height for circular shape */
+  margin-bottom: 1em;
+  position: relative;
+}
+
+.logo {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  position: relative;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0.75em 1.5em;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background .3s;
+  border: none;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  background: var(--verde-oliva-oscuro);
+}
+
+/* Beneficios */
+.grid-beneficios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.beneficio {
+  text-align: center;
+}
+
+.beneficio img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1em;
+  stroke: var(--verde-menta);
+}
+
+.beneficio h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary);
+  margin-bottom: 0.5em;
+}
+
+/* Ingredientes */
+.grid-ingredientes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ingrediente {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.ingrediente img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s;
+  position: relative;
+  z-index: 0;
+}
+
+.ingrediente:hover img {
+  transform: scale(1.1);
+}
+
+.ingrediente .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 1em;
+  transform: translateY(100%);
+  transition: transform .4s;
+}
+
+.ingrediente:hover .overlay {
+  transform: translateY(0);
+}
+
+/* Valores */
+.proceso {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.paso {
+  flex: 1;
+  text-align: center;
+}
+
+.paso .numero {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--rosa-suave);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0 auto 1em;
+}
+
+/* Testimonios */
+.slider-testimonios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonio {
+  background: white;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.testimonio img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1em;
+}
+
+.testimonio blockquote {
+  margin: 0;
+  font-style: italic;
+  color: #555;
+}
+
+.testimonio cite {
+  display: block;
+  margin-top: 1em;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* Footer */
+.footer {
+  background: var(--verde-oliva-oscuro);
+  color: white;
+  text-align: center;
+  padding: 3em 2em;
+}
+
+.newsletter h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8em;
+  margin-bottom: 1em;
+  color: white;
+}
+
+.newsletter input {
+  padding: 0.75em;
+  border: 1px solid white;
+  border-radius: 4px 0 0 4px;
+  min-width: 250px;
+}
+
+.newsletter button {
+  border-radius: 0 4px 4px 0;
+  margin-left: -5px;
+}
+
+.newsletter button:hover {
+  background: var(--verde-menta);
+}
+
+
+
+.redes-sociales {
+  margin: 2em 0;
+}
+
+.redes-sociales a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.5em;
+  font-weight: bold;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('bg.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+/* Servicios Carousel */
+#servicios {
+  background: var(--beige); /* Use the page background color */
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 800px; /* Limit carousel width */
+  margin: 2em auto;
+  overflow: hidden; /* Hide overflowing slides */
+  position: relative; /* Added for absolute positioning of buttons */
+}
+
+.carousel-slide {
+  display: none; /* Hidden by default, JS will show one */
+  padding: 2em;
+  background: white; /* White background for slides */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.carousel-slide img {
+  width: 350px; /* Increased width by 100px */
+  height: 300px; /* Increased height by 100px */
+  object-fit: cover; /* Ensure images cover the area without distortion */
+  margin: 0 auto 1em; /* Center horizontally and add bottom margin */
+}
+
+.carousel-next-btn,
+.carousel-prev-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--verde-oliva-oscuro); /* Green like footer */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1.2em;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 10; /* Ensure buttons are above slides */
+}
+
+.carousel-prev-btn {
+  left: 10px;
+}
+
+.carousel-next-btn {
+  right: 10px;
+}
+
+.carousel-next-btn:hover,
+.carousel-prev-btn:hover {
+  background-color: var(--rosa-suave); /* Salmon on hover */
+  transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-slide h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary);
+  margin-bottom: 0.5em;
+}
+
+.carousel-slide p {
+  margin-bottom: 1em;
+}
+
+/* Hamburger Menu */
+.hamburger-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 30px; /* Initial size */
+  height: 30px; /* Set height to 30px as requested */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Revert to original spacing */
+  cursor: pointer;
+  z-index: 100; /* Ensure it's on top */
+}
+
+/* Navigation Menu */
+#main-nav {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Hidden by default */
+  width: 70%; /* Adjust as needed */
+  max-width: 300px;
+  height: 100%;
+  background-color: rgba(var(--verde-oliva-oscuro-rgb), 0.95); /* Semi-transparent dark olive */
+  padding-top: 60px; /* Space for hamburger icon */
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+
+.hamburger-icon span {
+  display: block;
+  width: 80%; /* Reduced width */
+  height: 0.75rem; /* Increased thickness - using rem (12px if base is 16px) */
+  background-color: rgb(250, 128, 114); /* Salmon color for visibility */
+  transition: all 0.3s ease;
+  margin: 3px 0; /* Keep vertical spacing */
+  border-radius: 5px; /* Rounded borders */
+}
+
+/* Navigation Menu */
+#main-nav {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Hidden by default */
+  width: 70%; /* Adjust as needed */
+  max-width: 300px;
+  height: 100%;
+  background-color: rgba(var(--verde-oliva-oscuro-rgb), 0.95); /* Semi-transparent dark olive */
+  padding-top: 60px; /* Space for hamburger icon */
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+
+#main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#main-nav ul li a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2em;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#main-nav ul li a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Open state for menu */
+#main-nav.open {
+  right: 0;
+}
+
+/* Hamburger icon animation for open state */
+.hamburger-icon.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
